@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 55px);
+    gap: 0;
+    border: 3px solid #2c3e50;
+    margin: 0 auto 2rem;
+    background: #fff;
+}
+
+.cell {
+    position: relative;
+    height: 55px;
+    border: 1px solid #bdc3c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: #fff;
+}
+
+/* Thicker borders for 3x3 boxes */
+.cell:nth-child(3n) {
+    border-right: 2px solid #2c3e50;
+}
+
+.cell:nth-child(9n) {
+    border-right: none;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #2c3e50;
+}
+
+/* Alternate 3x3 box backgrounds */
+.sudoku-grid > .cell:nth-child(odd):nth-child(9n+1),
+.sudoku-grid > .cell:nth-child(odd):nth-child(9n+3),
+.sudoku-grid > .cell:nth-child(odd):nth-child(9n+5),
+.sudoku-grid > .cell:nth-child(odd):nth-child(9n+7),
+.sudoku-grid > .cell:nth-child(odd):nth-child(9n+9) {
+    background: #f8f9fa;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #2c3e50;
+    background: transparent;
+}
+
+.cell input:focus {
+    outline: none;
+    background: #e8f4ff;
+}
+
+/* Pre-filled numbers style */
+.cell input.fixed {
+    color: #3498db;
+    font-weight: 700;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#solve-btn {
+    background: #27ae60;
+    color: white;
+    border: 2px solid #219a52;
+}
+
+#clear-btn {
+    background: #e74c3c;
+    color: white;
+    border: 2px solid #c0392b;
+}
+
+#example-btn {
+    background: #3498db;
+    color: white;
+    border: 2px solid #2980b9;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#message {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 24px;
+}
