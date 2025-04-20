@@ -24,7 +24,7 @@ A simple web app to solve Sudoku puzzles using backtracking. Built with Flask.
 ## Setup
 
 ```bash
-git clone https://github.com/shlsgh/sudoku-solver.git
-cd sudoku-solver
+git clone https://github.com/shlsgh/sudoku.git
+cd sudoku
 pip install -r requirements.txt
 flask run
